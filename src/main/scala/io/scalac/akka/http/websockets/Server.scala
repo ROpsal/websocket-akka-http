@@ -36,7 +36,7 @@ object Server extends App {
 
   import actorSystem.dispatcher
 
-  binding.flatMap(_.unbind()).onComplete(_ => actorSystem.shutdown())
+  binding.flatMap(_.unbind()).onComplete(_ => actorSystem.terminate())
   println("Server is down...")
 
   private def alternativelyRunTheClient(): Unit = {
